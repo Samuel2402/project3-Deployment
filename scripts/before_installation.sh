@@ -36,4 +36,5 @@ fi
 # this could mean you are also connecting
 # when it is already connected.
 
-aws eks update-kubeconfig --name qa_cluster
+# aws eks update-kubeconfig --name qa_cluster
+aws eks --region eu-west-2 update-kubeconfig --name qa_cluster
