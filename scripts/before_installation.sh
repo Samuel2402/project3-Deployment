@@ -25,6 +25,9 @@ output()
 output "Updating to make sure the latest security patches are installed"
 sudo apt update -y
 
+output "switching users - jenkins"
+sudo su jenkins
+
 if [[ "$(aws --version 2> /dev/null)" == "" ]]; then
     error "AWS CLI is not installed"
 fi
