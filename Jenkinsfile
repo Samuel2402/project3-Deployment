@@ -27,7 +27,9 @@ pipeline {
         stage('Docker Push') {
             steps {
                 sh "docker login -u samuel240210 -p ${PASSWORD}"
-                sh 'docker push samuel240210/petclinic-fe:latest'  
+                sh 'docker push samuel240210/petclinic-fe:latest'
+                sh 'docker push samuel240210/petclinic-be:latest'
+                sh 'docker push samuel240210/nginx:latest'                
             }
         }
 
