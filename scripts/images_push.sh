@@ -26,20 +26,20 @@ output "Pushing qa/petclinic-fe to dockerhub"
 
 if [[ ! "$(docker images -q qa/petclinic-fe:latest 2> /dev/null)" == "" ]]; then
     output "Image exists"
-    docker push qa/petclinic-fe
+    sudo docker push qa/petclinic-fe
 fi
 
 output "Pushing qa/petclinic-be to dockerhub"
 
 if [[ ! "$(docker images -q qa/petclinic-be:latest 2> /dev/null)" == "" ]]; then
     output "Image exists"
-    docker push qa/petclinic-be
+    sudo docker push qa/petclinic-be
 fi
 
 output "Pushing qa/nginx to dockerhub"
 
 if [[ ! "$(docker images -q qa/nginx:latest 2> /dev/null)" == "" ]]; then
     output "Image exists"
-    docker push qa/nginx
+    sudo docker push qa/nginx
 fi
 
