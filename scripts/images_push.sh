@@ -26,7 +26,7 @@ output "Pushing qa/petclinic-fe to dockerhub"
 
 if [[ ! "$(docker images -q qa/petclinic-fe:latest 2> /dev/null)" == "" ]]; then
     output "Image exists"
-    sudo docker push pet-clinic
+    sudo docker push samuel240210/qa:petclinic-fe:latest
 fi
 
 output "Pushing qa/petclinic-be to dockerhub"
