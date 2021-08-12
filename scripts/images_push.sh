@@ -41,4 +41,3 @@ if [[ ! "$(docker images -q qa/nginx:latest 2> /dev/null)" == "" ]]; then
     output "Image exists"
      sudo docker login && sudo docker push qa/nginx
 fi
-
