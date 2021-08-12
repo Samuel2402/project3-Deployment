@@ -22,10 +22,14 @@ pipeline {
             }
         }
 
-        stage('Push images to dockerhub') {
+        stage('Docker Push') {
+            agent any
             steps {
-                sh './scripts/images_push.sh'
-            }
+              withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
+                sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
+                sh 'docker push shanem/spring-petclinic:latest
+              }
+           }
         }
 
         stage('Deploy Kubernetes') {
